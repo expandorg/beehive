@@ -11,5 +11,5 @@ type MissingParameters struct {
 
 func (err *MissingParameters) Error() string {
 	missing := strings.Join(err.Params, ",")
-	return fmt.Sprintf("Missing required params: %s", missing)
+	return fmt.Sprintf("Missing or mismatch of required params: %s", missing)
 }
