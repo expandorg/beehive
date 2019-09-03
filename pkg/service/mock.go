@@ -62,3 +62,18 @@ func (mr *MockBeehiveServiceMockRecorder) CreateSolution(hp interface{}) *gomock
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateSolution", reflect.TypeOf((*MockBeehiveService)(nil).CreateSolution), hp)
 }
+
+// CreateJobSolutions mocks base method
+func (m *MockBeehiveService) CreateJobSolutions(jobID string, hp honey.JobSolutions) (honey.JobSolutions, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "CreateJobSolutions", jobID, hp)
+	ret0, _ := ret[0].(honey.JobSolutions)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// CreateJobSolutions indicates an expected call of CreateJobSolutions
+func (mr *MockBeehiveServiceMockRecorder) CreateJobSolutions(jobID, hp interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateJobSolutions", reflect.TypeOf((*MockBeehiveService)(nil).CreateJobSolutions), jobID, hp)
+}

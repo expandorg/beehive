@@ -9,6 +9,7 @@ import (
 type BeehiveService interface {
 	Healthy() bool
 	CreateSolution(hp honey.Solution) (honey.Solution, error)
+	CreateJobSolutions(jobID string, hp honey.JobSolutions) (honey.JobSolutions, error)
 }
 
 type service struct {
@@ -29,4 +30,8 @@ func (s *service) Healthy() bool {
 
 func (s *service) CreateSolution(sol honey.Solution) (honey.Solution, error) {
 	return s.store.CreateSolution(sol)
+}
+
+func (s *service) CreateJobSolutions(jobID string, sols honey.JobSolutions) (honey.JobSolutions, error) {
+	return s.store.CreateJobSolutions(jobID, sols)
 }

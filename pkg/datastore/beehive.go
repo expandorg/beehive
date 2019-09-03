@@ -1,12 +1,16 @@
 package datastore
 
 import (
+	"fmt"
+	"strings"
+
 	"github.com/gemsorg/beehive/pkg/honey"
 	"github.com/jmoiron/sqlx"
 )
 
 type Storage interface {
 	CreateSolution(sol honey.Solution) (honey.Solution, error)
+	CreateJobSolutions(jobID string, sols honey.JobSolutions) (honey.JobSolutions, error)
 }
 
 type BeehiveStore struct {
@@ -33,4 +37,27 @@ func (b *BeehiveStore) CreateSolution(sol honey.Solution) (honey.Solution, error
 	}
 	sol.ID = uint64(id)
 	return sol, nil
+}
+
+func (b *BeehiveStore) CreateJobSolutions(jobID string, sols honey.JobSolutions) (honey.JobSolutions, error) {
+	vals := []string{}
+	for _, sol := range sols {
+
+		vals = append(vals, fmt.Sprintf("(%d, %s, %q)", sol.TaskID, jobID, sol.Data))
+	}
+
+	tx, err := b.DB.Begin()
+	attrQuery := "INSERT INTO solutions (task_id, job_id, data) VALUES" + strings.Join(vals, ",")
+
+	_, err = tx.Exec(attrQuery)
+	if err != nil {
+		tx.Rollback()
+		return honey.JobSolutions{}, err
+	}
+
+	err = tx.Commit()
+	if err != nil {
+		return honey.JobSolutions{}, err
+	}
+	return sols, nil
 }

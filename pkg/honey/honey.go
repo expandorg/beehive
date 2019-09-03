@@ -10,3 +10,5 @@ type Solution struct {
 	JobID  uint64          `json:"job_id" db:"job_id"`
 	Data   json.RawMessage `json:"data"`
 }
+
+type JobSolutions []Solution

@@ -3,6 +3,7 @@ package server
 import (
 	"net/http"
 
+	"github.com/gemsorg/beehive/pkg/api/jobsolutionsmaker"
 	"github.com/gemsorg/beehive/pkg/api/solutionmaker"
 
 	"github.com/gemsorg/beehive/pkg/authentication"
@@ -22,6 +23,7 @@ func New(
 
 	r.Handle("/_health", healthchecker.MakeHandler(s)).Methods("GET")
 	r.Handle("/honeypots/{task_id}/solutions", solutionmaker.MakeHandler(s)).Methods("POST")
+	r.Handle("/jobs/{job_id}/solutions", jobsolutionsmaker.MakeHandler(s)).Methods("POST")
 	r.Use(authentication.AuthMiddleware)
 	return withHandlers(r)
 }
