@@ -6,26 +6,26 @@ import (
 )
 
 type APIError struct {
-	statusCode int    `json:"-"`
-	Message    string `json:"message"`
-	error      error  `json:"-"`
+	statusCode   int    `json:"-"`
+	ErrorMessage string `json:"error"`
+	error        error  `json:"-"`
 }
 
 type errorPayload struct {
-	Message string `json:"message"`
+	ErrorMessage string `json:"error"`
 }
 
-func New(statusCode int, message string, err error) *APIError {
+func New(statusCode int, error string, err error) *APIError {
 	return &APIError{
-		statusCode: statusCode,
-		Message:    message,
-		error:      err,
+		statusCode:   statusCode,
+		ErrorMessage: error,
+		error:        err,
 	}
 }
 
 func (a *APIError) MarshalJSON() ([]byte, error) {
 	return json.Marshal(errorPayload{
-		Message: a.Message,
+		ErrorMessage: a.ErrorMessage,
 	})
 }
 
@@ -34,5 +34,5 @@ func (a *APIError) StatusCode() int {
 }
 
 func (a *APIError) Error() string {
-	return fmt.Sprintf("Status: %d, Message: [%s]:%s", a.statusCode, a.Message, a.error)
+	return fmt.Sprintf("Status: %d, ErrorMessage: [%s]:%s", a.statusCode, a.ErrorMessage, a.error)
 }
