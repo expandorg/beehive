@@ -11,6 +11,7 @@ import (
 type Storage interface {
 	CreateSolution(sol honey.Solution) (honey.Solution, error)
 	CreateJobSolutions(jobID string, sols honey.JobSolutions) (honey.JobSolutions, error)
+	DeleteJobSolutions(jobID string) (bool, error)
 }
 
 type BeehiveStore struct {
@@ -60,4 +61,12 @@ func (b *BeehiveStore) CreateJobSolutions(jobID string, sols honey.JobSolutions)
 		return honey.JobSolutions{}, err
 	}
 	return sols, nil
+}
+
+func (b *BeehiveStore) DeleteJobSolutions(jobID string) (bool, error) {
+	_, err := b.DB.Exec("DELETE FROM solutions WHERE job_id=?", jobID)
+	if err != nil {
+		return false, err
+	}
+	return true, nil
 }

@@ -77,3 +77,18 @@ func (mr *MockBeehiveServiceMockRecorder) CreateJobSolutions(jobID, hp interface
 	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "CreateJobSolutions", reflect.TypeOf((*MockBeehiveService)(nil).CreateJobSolutions), jobID, hp)
 }
+
+// DeleteJobSolutions mocks base method
+func (m *MockBeehiveService) DeleteJobSolutions(jobID string) (bool, error) {
+	m.ctrl.T.Helper()
+	ret := m.ctrl.Call(m, "DeleteJobSolutions", jobID)
+	ret0, _ := ret[0].(bool)
+	ret1, _ := ret[1].(error)
+	return ret0, ret1
+}
+
+// DeleteJobSolutions indicates an expected call of DeleteJobSolutions
+func (mr *MockBeehiveServiceMockRecorder) DeleteJobSolutions(jobID interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
+	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "DeleteJobSolutions", reflect.TypeOf((*MockBeehiveService)(nil).DeleteJobSolutions), jobID)
+}
