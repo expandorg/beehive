@@ -46,7 +46,12 @@ func (b *BeehiveStore) CreateJobSolutions(jobID string, sols honey.JobSolutions)
 		sol.JobID = id
 	}
 
-	tx := b.DB.MustBegin()
+	tx, err := b.DB.Beginx()
+	if err != nil {
+		tx.Rollback()
+		return solutions, err
+	}
+
 	results, err := tx.NamedExec("INSERT INTO solutions (task_id, job_id, data) VALUES (:task_id, :job_id, :data)", sols)
 
 	if err != nil {
