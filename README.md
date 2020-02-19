@@ -1,6 +1,7 @@
 # Beehive Service
- 
-Backend service for creating honeypots. [API documentation](https://documenter.getpostman.com/view/7517177/SzKSTKzZ)
+A honeypot is a security system used to detect fake, fraudulent, or otherwise unauthorized access. We use honeypots as both a quality management tool and as a fraud prevention system. The beehive service works by storing tasks that have a known answer. Workers are then assigned to a honeypot question instead of a real task. Since the answer is known, we can tell if the worker was correct or not right away without the use of a verifier. Workers who have consistently failed the honey pot can be prevented from further tasking.
+
+For full [API documentation](https://documenter.getpostman.com/view/7517177/SzKSTKzZ)
 
 ## Getting started 
 
