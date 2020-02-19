@@ -7,9 +7,9 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
-	"github.com/gemsorg/beehive/pkg/apierror"
-	"github.com/gemsorg/beehive/pkg/mock"
-	service "github.com/gemsorg/beehive/pkg/service"
+	"github.com/expandorg/beehive/pkg/apierror"
+	"github.com/expandorg/beehive/pkg/mock"
+	service "github.com/expandorg/beehive/pkg/service"
 	"github.com/golang/mock/gomock"
 )
 

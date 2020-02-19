@@ -7,7 +7,7 @@ package service
 import (
 	reflect "reflect"
 
-	honey "github.com/gemsorg/beehive/pkg/honey"
+	honey "github.com/expandorg/beehive/pkg/honey"
 	gomock "github.com/golang/mock/gomock"
 )
 

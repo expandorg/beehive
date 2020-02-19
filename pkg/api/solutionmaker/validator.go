@@ -3,8 +3,8 @@ package solutionmaker
 import (
 	"strconv"
 
-	"github.com/gemsorg/beehive/pkg/apierror"
-	"github.com/gemsorg/beehive/pkg/honey"
+	"github.com/expandorg/beehive/pkg/apierror"
+	"github.com/expandorg/beehive/pkg/honey"
 )
 
 func validateRequest(potID string, req honey.Solution) (bool, *apierror.APIError) {

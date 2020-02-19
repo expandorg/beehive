@@ -7,13 +7,13 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/gemsorg/beehive/pkg/authorization"
-	"github.com/gemsorg/beehive/pkg/database"
-	"github.com/gemsorg/beehive/pkg/datastore"
-	"github.com/gemsorg/beehive/pkg/service"
+	"github.com/expandorg/beehive/pkg/authorization"
+	"github.com/expandorg/beehive/pkg/database"
+	"github.com/expandorg/beehive/pkg/datastore"
+	"github.com/expandorg/beehive/pkg/service"
 	"github.com/joho/godotenv"
 
-	"github.com/gemsorg/beehive/pkg/server"
+	"github.com/expandorg/beehive/pkg/server"
 )
 
 func main() {

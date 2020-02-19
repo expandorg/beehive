@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"net/http"
 
-	service "github.com/gemsorg/beehive/pkg/service"
+	service "github.com/expandorg/beehive/pkg/service"
 	kithttp "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
 )

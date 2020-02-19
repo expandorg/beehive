@@ -3,8 +3,8 @@ package service
 import (
 	"testing"
 
-	"github.com/gemsorg/beehive/pkg/authorization"
-	"github.com/gemsorg/beehive/pkg/datastore"
+	"github.com/expandorg/beehive/pkg/authorization"
+	"github.com/expandorg/beehive/pkg/datastore"
 	"github.com/stretchr/testify/assert"
 )
 

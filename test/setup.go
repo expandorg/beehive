@@ -5,8 +5,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/gemsorg/beehive/pkg/mock"
-	"github.com/gemsorg/beehive/pkg/service"
+	"github.com/expandorg/beehive/pkg/mock"
+	"github.com/expandorg/beehive/pkg/service"
 	"github.com/golang/mock/gomock"
 
 	"github.com/DATA-DOG/go-sqlmock"

@@ -5,8 +5,8 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/gemsorg/beehive/pkg/apierror"
-	"github.com/gemsorg/beehive/pkg/honey"
+	"github.com/expandorg/beehive/pkg/apierror"
+	"github.com/expandorg/beehive/pkg/honey"
 )
 
 func Test_validateRequest(t *testing.T) {

@@ -4,7 +4,7 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/gemsorg/beehive/pkg/authentication"
+	"github.com/expandorg/beehive/pkg/authentication"
 )
 
 func TestNewAuthorizer(t *testing.T) {

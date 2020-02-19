@@ -3,10 +3,10 @@ package jobsolutionsmaker
 import (
 	"context"
 
-	"github.com/gemsorg/beehive/pkg/apierror"
-	"github.com/gemsorg/beehive/pkg/honey"
+	"github.com/expandorg/beehive/pkg/apierror"
+	"github.com/expandorg/beehive/pkg/honey"
 
-	service "github.com/gemsorg/beehive/pkg/service"
+	service "github.com/expandorg/beehive/pkg/service"
 
 	"github.com/go-kit/kit/endpoint"
 )

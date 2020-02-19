@@ -11,4 +11,4 @@ type Solution struct {
 	Data   json.RawMessage `json:"data"`
 }
 
-type JobSolutions []Solution
+type JobSolutions []*Solution

@@ -3,7 +3,7 @@ package healthchecker
 import (
 	"context"
 
-	service "github.com/gemsorg/beehive/pkg/service"
+	service "github.com/expandorg/beehive/pkg/service"
 
 	"github.com/go-kit/kit/endpoint"
 )

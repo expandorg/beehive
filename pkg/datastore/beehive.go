@@ -3,7 +3,7 @@ package datastore
 import (
 	"strconv"
 
-	"github.com/gemsorg/beehive/pkg/honey"
+	"github.com/expandorg/beehive/pkg/honey"
 	"github.com/jmoiron/sqlx"
 )
 

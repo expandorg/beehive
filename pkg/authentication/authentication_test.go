@@ -7,7 +7,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/gemsorg/beehive/pkg/mock"
+	"github.com/expandorg/beehive/pkg/mock"
 	"github.com/stretchr/testify/assert"
 )
 

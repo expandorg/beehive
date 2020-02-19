@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/gemsorg/beehive/pkg/apierror"
-	"github.com/gemsorg/beehive/pkg/honey"
-	service "github.com/gemsorg/beehive/pkg/service"
+	"github.com/expandorg/beehive/pkg/apierror"
+	"github.com/expandorg/beehive/pkg/honey"
+	service "github.com/expandorg/beehive/pkg/service"
 	kithttp "github.com/go-kit/kit/transport/http"
 	"github.com/gorilla/mux"
 )

@@ -3,16 +3,16 @@ package server
 import (
 	"net/http"
 
-	"github.com/gemsorg/beehive/pkg/api/jobsolutionsdestroyer"
-	"github.com/gemsorg/beehive/pkg/api/jobsolutionsmaker"
-	"github.com/gemsorg/beehive/pkg/api/solutionmaker"
+	"github.com/expandorg/beehive/pkg/api/jobsolutionsdestroyer"
+	"github.com/expandorg/beehive/pkg/api/jobsolutionsmaker"
+	"github.com/expandorg/beehive/pkg/api/solutionmaker"
 
-	"github.com/gemsorg/beehive/pkg/authentication"
+	"github.com/expandorg/beehive/pkg/authentication"
 
 	"github.com/jmoiron/sqlx"
 
-	"github.com/gemsorg/beehive/pkg/api/healthchecker"
-	"github.com/gemsorg/beehive/pkg/service"
+	"github.com/expandorg/beehive/pkg/api/healthchecker"
+	"github.com/expandorg/beehive/pkg/service"
 	"github.com/gorilla/mux"
 )
 

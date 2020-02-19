@@ -1,7 +1,7 @@
 package authorization
 
 import (
-	"github.com/gemsorg/beehive/pkg/authentication"
+	"github.com/expandorg/beehive/pkg/authentication"
 )
 
 type Authorizer interface {

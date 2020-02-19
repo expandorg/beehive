@@ -5,12 +5,12 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/gemsorg/beehive/pkg/honey"
+	"github.com/expandorg/beehive/pkg/honey"
 	"github.com/stretchr/testify/assert"
 
-	"github.com/gemsorg/beehive/pkg/apierror"
-	"github.com/gemsorg/beehive/pkg/mock"
-	service "github.com/gemsorg/beehive/pkg/service"
+	"github.com/expandorg/beehive/pkg/apierror"
+	"github.com/expandorg/beehive/pkg/mock"
+	service "github.com/expandorg/beehive/pkg/service"
 	"github.com/golang/mock/gomock"
 )
 

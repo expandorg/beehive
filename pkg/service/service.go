@@ -1,9 +1,9 @@
 package service
 
 import (
-	"github.com/gemsorg/beehive/pkg/authorization"
-	"github.com/gemsorg/beehive/pkg/datastore"
-	"github.com/gemsorg/beehive/pkg/honey"
+	"github.com/expandorg/beehive/pkg/authorization"
+	"github.com/expandorg/beehive/pkg/datastore"
+	"github.com/expandorg/beehive/pkg/honey"
 )
 
 type BeehiveService interface {

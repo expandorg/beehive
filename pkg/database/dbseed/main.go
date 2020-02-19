@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"log"
 
-	"github.com/gemsorg/beehive/pkg/database"
+	"github.com/expandorg/beehive/pkg/database"
 	"github.com/jmoiron/sqlx"
 	env "github.com/joho/godotenv"
 )
