@@ -1,8 +1,7 @@
 package datastore
 
 import (
-	"fmt"
-	"strings"
+	"strconv"
 
 	"github.com/gemsorg/beehive/pkg/honey"
 	"github.com/jmoiron/sqlx"
@@ -41,26 +40,38 @@ func (b *BeehiveStore) CreateSolution(sol honey.Solution) (honey.Solution, error
 }
 
 func (b *BeehiveStore) CreateJobSolutions(jobID string, sols honey.JobSolutions) (honey.JobSolutions, error) {
-	vals := []string{}
+	solutions := honey.JobSolutions{}
 	for _, sol := range sols {
-
-		vals = append(vals, fmt.Sprintf("(%d, %s, %q)", sol.TaskID, jobID, sol.Data))
+		id, _ := strconv.ParseUint(jobID, 10, 64)
+		sol.JobID = id
 	}
 
-	tx, err := b.DB.Begin()
-	attrQuery := "INSERT INTO solutions (task_id, job_id, data) VALUES" + strings.Join(vals, ",")
+	tx := b.DB.MustBegin()
+	results, err := tx.NamedExec("INSERT INTO solutions (task_id, job_id, data) VALUES (:task_id, :job_id, :data)", sols)
 
-	_, err = tx.Exec(attrQuery)
 	if err != nil {
 		tx.Rollback()
-		return honey.JobSolutions{}, err
+		return solutions, err
+	}
+
+	ra, err := results.RowsAffected()
+	if err != nil || ra != int64(len(sols)) {
+		tx.Rollback()
+		return solutions, err
+	}
+
+	err = tx.Select(&solutions, "SELECT * FROM solutions WHERE job_id = ?", jobID)
+	if err != nil {
+		tx.Rollback()
+		return solutions, err
 	}
 
 	err = tx.Commit()
 	if err != nil {
-		return honey.JobSolutions{}, err
+		return solutions, err
 	}
-	return sols, nil
+
+	return solutions, nil
 }
 
 func (b *BeehiveStore) DeleteJobSolutions(jobID string) (bool, error) {
