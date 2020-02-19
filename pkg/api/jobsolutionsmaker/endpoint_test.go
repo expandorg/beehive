@@ -24,7 +24,7 @@ func Test_makeJobSolutionsMakerEndpoint(t *testing.T) {
 	}
 	// No error
 	sol := honey.Solution{1, 1, 1, []byte{}}
-	sols := honey.JobSolutions{sol}
+	sols := honey.JobSolutions{&sol}
 	req := JobSoltionsRequest{"1", sols}
 	s.EXPECT().
 		CreateJobSolutions(req.JobID, req.Solutions).

@@ -21,7 +21,7 @@ func Test_validateRequest(t *testing.T) {
 	}{
 		{
 			"is valid if solutions are not empty",
-			args{honey.JobSolutions{honey.Solution{0, 1, 1, json.RawMessage{}}}},
+			args{honey.JobSolutions{&honey.Solution{0, 1, 1, json.RawMessage{}}}},
 			true,
 			nil,
 		},
