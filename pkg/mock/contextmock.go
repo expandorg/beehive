@@ -38,7 +38,7 @@ func (ctx MockContext) Value(key interface{}) interface{} {
 func GenerateJWT(userID int) (string, error) {
 	c := jwt.MapClaims{
 		"exp": time.Now().Add(8760 * time.Hour).Unix(),
-		"iss": "http://localhost:3001",
+		"iss": "http://localhost:8182",
 		"uid": userID,
 	}
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, c)

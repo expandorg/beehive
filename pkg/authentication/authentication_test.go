@@ -43,7 +43,7 @@ func TestParseAuthData(t *testing.T) {
 		{
 			"it returns auth data",
 			args{ctx},
-			AuthData{1591960106, "http://localhost:3001", 1},
+			AuthData{1591960106, "http://localhost:8182", 1},
 			false,
 		},
 	}

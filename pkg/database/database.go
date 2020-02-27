@@ -14,7 +14,7 @@ const connMaxLifetime = time.Second * 5
 func Connect() (*sqlx.DB, error) {
 	host := os.Getenv("BEEHIVE_DB_HOST")
 	port := os.Getenv("BEEHIVE_DB_PORT")
-	name := os.Getenv("BEEHIVE_DB_NAME")
+	name := os.Getenv("BEEHIVE_DB")
 	user := os.Getenv("BEEHIVE_DB_USER")
 	password := os.Getenv("BEEHIVE_DB_PASSWORD")
 	if password != "" {

@@ -21,6 +21,6 @@ WORKDIR /app
 
 COPY --from=build-stage  /go/src/github.com/expandorg/beehive/bin/beehive .
 
-EXPOSE 3001
+EXPOSE 8182
 
 CMD ["./beehive"]
