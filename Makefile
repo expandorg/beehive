@@ -76,12 +76,12 @@ build-migrations:
 run-migrations: build-migrations
 	docker run --network host beehive-migration \
 	$(action) $(version) \
-	"mysql://$(BEEHIVE_DB_USER):$(BEEHIVE_DB_PASSWORD)@tcp($(BEEHIVE_DB_HOST):$(BEEHIVE_DB_PORT))/$(BEEHIVE_DB_NAME)"
+	"mysql://$(BEEHIVE_DB_USER):$(BEEHIVE_DB_PASSWORD)@tcp($(BEEHIVE_DB_HOST):$(BEEHIVE_DB_PORT))/$(BEEHIVE_DB)"
 
 migrate-latest: build-migrations
 	docker run --network host beehive-migration \
 	goto $(LAST_MIGRATION) \
-	"mysql://$(BEEHIVE_DB_USER):$(BEEHIVE_DB_PASSWORD)@tcp($(BEEHIVE_DB_HOST):$(BEEHIVE_DB_PORT))/$(BEEHIVE_DB_NAME)"
+	"mysql://$(BEEHIVE_DB_USER):$(BEEHIVE_DB_PASSWORD)@tcp($(BEEHIVE_DB_HOST):$(BEEHIVE_DB_PORT))/$(BEEHIVE_DB)"
 
 db-seed:
 	@echo "Seeding db"

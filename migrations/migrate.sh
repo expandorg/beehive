@@ -7,7 +7,7 @@ db=$3
 if [ "$action" = "composeup" ]; then
   /migrations/migrate \
     -source file:///migrations \
-    -database "mysql://$BEEHIVE_DB_USER:$BEEHIVE_DB_PASSWORD@tcp($BEEHIVE_DB_HOST:$BEEHIVE_DB_PORT)/$BEEHIVE_DB_NAME" \
+    -database "mysql://$BEEHIVE_DB_USER:$BEEHIVE_DB_PASSWORD@tcp($BEEHIVE_DB_HOST:$BEEHIVE_DB_PORT)/$BEEHIVE_DB" \
     up
   exit 0
 fi
